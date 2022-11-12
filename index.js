@@ -6,8 +6,8 @@ try {
 
   try {
     const shapedMessage = deployResultMessage.replace(/('|")/g, "\\$&");
-    console.log({ shapedMessage });
     core.setOutput("DEPLOY_MESSAGE", shapedMessage);
+    console.log({ shapedMessage });
   } catch (e) {
     console.log("error occurred");
     console.log(e);
