@@ -8,8 +8,6 @@ try {
   try {
     const shapedMessage = deployResultMessage.replace(/('|")/g, "\\$&");
     console.log("shapedMessage", shapedMessage);
-
-    console.log("write end");
   } catch (e) {
     console.log(e);
   }
