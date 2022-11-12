@@ -1,7 +1,6 @@
 const core = require("@actions/core");
 
 try {
-  // `who-to-greet` input defined in action metadata file
   const deployResultMessage = core.getInput("deploy-result-message");
   console.log("deployResultMessage", `${deployResultMessage}!`);
 
