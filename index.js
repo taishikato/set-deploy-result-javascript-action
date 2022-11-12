@@ -8,7 +8,7 @@ try {
   try {
     const shapedMessage = deployResultMessage
       .replace(/('|"|`)/g, "$&$&")
-      .replace(/at\s{1}.+/, "index.ts");
+      .replace(/at\s{1}.+/, "at index.ts");
     core.setOutput("error", shapedMessage);
     core.setOutput("apiId", github.context.payload.client_payload.apiId);
     console.log({ shapedMessage });
