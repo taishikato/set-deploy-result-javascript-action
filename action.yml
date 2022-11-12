@@ -1,0 +1,13 @@
+name: "Deploy Result"
+description: "Shape deploy message and set it as an output value"
+inputs:
+  deploy-result-message: # id of input
+    description: "deploy message"
+    required: true
+    default: "World"
+outputs:
+  DEPLOY_MESSAGE: # id of output
+    description: "Shaped deploy message"
+runs:
+  using: "node16"
+  main: "index.js"
