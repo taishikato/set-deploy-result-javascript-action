@@ -6,12 +6,12 @@ try {
 
   try {
     const shapedMessage = deployResultMessage.replace(/('|")/g, "\\$&");
-    console.log("shapedMessage", shapedMessage);
+    console.log({ shapedMessage });
+    core.setOutput("DEPLOY_MESSAGE", shapedMessage);
   } catch (e) {
+    console.log("error occurred");
     console.log(e);
   }
-
-  core.setOutput("DEPLOY_MESSAGE", shapedMessage);
 } catch (error) {
   core.setFailed(error.message);
 }
