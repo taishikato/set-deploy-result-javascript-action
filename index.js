@@ -8,7 +8,7 @@ try {
   try {
     const shapedMessage = deployResultMessage.replace(/('|"|`)/g, "$&$&");
     core.setOutput("error", shapedMessage);
-    core.setOutput("appId", github.event.client_payload.apiId);
+    core.setOutput("appId", github.context.payload.client_payload.apiId);
     console.log({ shapedMessage });
   } catch (e) {
     console.log("error occurred");
