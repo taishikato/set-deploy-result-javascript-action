@@ -5,7 +5,7 @@ try {
   console.log("deployResultMessage", `${deployResultMessage}!`);
 
   try {
-    const shapedMessage = deployResultMessage.replace(/('|"|`)/g, "$&$&");
+    const shapedMessage = deployResultMessage.replace(/('|"|`)/g, "\\$&$&");
     core.setOutput("DEPLOY_MESSAGE", shapedMessage);
     console.log({ shapedMessage });
   } catch (e) {
