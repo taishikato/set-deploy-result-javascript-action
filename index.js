@@ -1,4 +1,5 @@
 const core = require("@actions/core");
+const github = require("@actions/github");
 
 try {
   const deployResultMessage = core.getInput("deploy-result-message");
@@ -6,7 +7,8 @@ try {
 
   try {
     const shapedMessage = deployResultMessage.replace(/('|"|`)/g, "$&$&");
-    core.setOutput("DEPLOY_MESSAGE", shapedMessage);
+    core.setOutput("error", shapedMessage);
+    core.setOutput("appId", github.event.client_payload.apiId);
     console.log({ shapedMessage });
   } catch (e) {
     console.log("error occurred");
